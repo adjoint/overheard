@@ -128,7 +128,7 @@ for d in data:
             count += 1
     else:
         if d[2] == category:
-            if d[0].find(word) != -1:
+            if d[0] == word:
                 x.append(datetime.strptime(d[1], "%Y-%m-%d %H:%M"))
                 y.append(((count/dnum)*1000000))
                 count += 1
@@ -143,7 +143,7 @@ if (word2 != '0') and (category2 != '0'):
                 count2 += 1
         else:
             if d[2] == category2:
-                if d[0].find(word2) != -1:
+                if d[0] == word2:
                     x2.append(datetime.strptime(d[1], "%Y-%m-%d %H:%M"))
                     y2.append(((count2/dnum2)*1000000))
                     count2 += 1

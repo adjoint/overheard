@@ -122,13 +122,13 @@ dnum = 1.0
 dnum2 = 1.0
 for d in data:
     if category == 'Все':
-        if d[0] == word:
+        if d[0].find(word) != -1:
             x.append(datetime.strptime(d[1], "%Y-%m-%d %H:%M"))
             y.append(((count/dnum)*1000000))
             count += 1
     else:
         if d[2] == category:
-            if d[0] == word:
+            if d[0].find(word) != -1:
                 x.append(datetime.strptime(d[1], "%Y-%m-%d %H:%M"))
                 y.append(((count/dnum)*1000000))
                 count += 1
@@ -137,13 +137,13 @@ for d in data:
 if (word2 != '0') and (category2 != '0'):  
     for d in data:
         if category2 == 'Все':
-            if d[0] == word2:
+            if d[0].find(word2) != -1:
                 x2.append(datetime.strptime(d[1], "%Y-%m-%d %H:%M"))
                 y2.append(((count2/dnum2)*1000000))
                 count2 += 1
         else:
             if d[2] == category2:
-                if d[0] == word2:
+                if d[0].find(word2) != -1:
                     x2.append(datetime.strptime(d[1], "%Y-%m-%d %H:%M"))
                     y2.append(((count2/dnum2)*1000000))
                     count2 += 1
